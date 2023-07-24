@@ -1,22 +1,24 @@
-Role Name
+Ansible role: lighthouse-role
 =========
 
-A brief description of the role goes here.
+Deploy & configure Lighthouse on Centos 7 using ansible.
 
 Requirements
 ------------
 
-Any pre-requisites that may not be covered by Ansible itself or the role should be mentioned here. For instance, if the role uses the EC2 module, it may be a good idea to mention in this section that the boto package is required.
+Ansible >= 2.7 (It might work on previous versions, but we cannot guarantee it)
+Git
+epel-release
+nginx
 
 Role Variables
 --------------
 
-A description of the settable variables for this role should go here, including any variables that are in defaults/main.yml, vars/main.yml, and any variables that can/should be set via parameters to the role. Any variables that are read from other roles and/or the global scope (ie. hostvars, group vars, etc.) should be mentioned here as well.
-
-Dependencies
-------------
-
-A list of other roles hosted on Galaxy should go here, plus any details in regards to parameters that may need to be set for other roles, or variables that are used from other roles.
+| vars | description                 | default value |
+|------|-----------------------------|---------------|
+|lighthouse_url   | URL for lighthouse git repo |https://github.com/VKCOM/lighthouse.git      |
+|lighthouse_dir   | work directory              |/home/gambrilus/lighthouse               |
+|lighthouse_nginx_user  | nginx user                  |root           |
 
 Example Playbook
 ----------------
@@ -25,14 +27,14 @@ Including an example of how to use your role (for instance, with variables passe
 
     - hosts: servers
       roles:
-         - { role: username.rolename, x: 42 }
+         - lighthouse-role
 
 License
 -------
 
-BSD
+MIT
 
 Author Information
 ------------------
 
-An optional section for the role authors to include contact information, or a website (HTML is not allowed).
+Andrey Gavrilov, Netology Student
